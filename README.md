@@ -41,3 +41,7 @@ open tudum.html in your browser
 
 cd netflix-clone
 open N_UI.html in your browser
+
+
+**  This project is a fan-made, educational recreation. All trademarks, logos, and media used are the property of Netflix.”  **
+Netflix logos and sounds used here are for educational and non-commercial demo purposes only.
