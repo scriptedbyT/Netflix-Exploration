@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Netflix Tudum Hover</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes pulseZoom {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .logo {
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      animation: pulseZoom 2s infinite;
+      transform: scale(1.15);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center h-screen bg-black text-white">
+
+  <!-- Centered Container -->
+  <div class="flex flex-col items-center justify-center space-y-6 text-center px-4">
+    
+    <!-- Netflix N logo -->
+    <img 
+      src="/Users/taneshkamehta/Documents/Netflix_Exploration/assets/N.jpg" 
+      alt="Netflix Logo"
+      id="netflixLogo"
+      class="logo w-24 sm:w-32 md:w-40 lg:w-48 cursor-pointer"
+    />
+
+    <!-- Tagline -->
+    <h1 class="text-lg sm:text-xl md:text-2xl font-semibold text-white/80">
+      Netflix. Tudum. Repeat.
+    </h1>
+  </div>
+
+  <!-- Tudum Sound -->
+  <audio id="tudumSound" src="/Users/taneshkamehta/Documents/Netflix_Exploration/assets/Tudum.mp3" preload="auto"></audio>
+
+  <script>
+    const logo = document.getElementById('netflixLogo');
+    const sound = document.getElementById('tudumSound');
+
+    function playSound() {
+      sound.currentTime = 0;
+      sound.play().catch(e => console.error("Playback failed:", e));
+    }
+
+    logo.addEventListener('click', playSound);
+    logo.addEventListener('mouseenter', playSound);
+    logo.addEventListener('touchstart', playSound);
+  </script>
+
+</body>
+</html>
